@@ -1,0 +1,43 @@
+body{
+	font-size: 16px;
+}
+body,ul,li{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.top{
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+}
+.logo{
+	width: 400px;
+	height: 60px;
+	float: left;
+}
+
+.header .top ul{
+	float: right;
+	list-style: none;
+}
+
+.header .top ul li{
+	display: block;
+	float: left;
+	width: 90px;
+	height: 60px;
+	border-left: 1px solid #d5d3d3;
+	border-right: 1px solid #d5d3d3;
+	text-align: center;
+	padding-top: 10px;
+	margin-left: -1px;
+}
+
+.header .top ul li a{
+	padding-top: 10px;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	display: block;
+}
