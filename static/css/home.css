@@ -1,15 +1,24 @@
 body{
 	font-size: 16px;
+	font-family: montserrat, Arial, Helvetica, tahoma, verdana, 'Microsoft YaHei', 微软雅黑, STXihei, 华文细黑, serif;
 }
 body,ul,li{
 	margin: 0;
 	padding: 0;
 	border: 0;
 }
-.top{
+
+a{
+	text-decoration: none;
+}
+
+.container{
 	max-width: 1200px;
+}
+.top{
 	margin: 0 auto;
 	width: 100%;
+	overflow: hidden;
 }
 .logo{
 	width: 400px;
@@ -32,6 +41,7 @@ body,ul,li{
 	text-align: center;
 	padding-top: 10px;
 	margin-left: -1px;
+	cursor: pointer;
 }
 
 .header .top ul li a{
@@ -40,4 +50,31 @@ body,ul,li{
 	height: 30px;
 	margin: 0 auto;
 	display: block;
+}
+
+.header .bottom{
+	background-color: #0065a5;
+	color: #ffffff;
+}
+
+.menu-list{
+	list-style: none;
+	overflow: hidden;
+}
+
+.menu-item{
+	float: left;
+}
+
+.menu-item>a{
+	padding: 20px 10px;
+	color: #ffffff;
+}
+
+.sec-list{
+	padding: 10px;
+}
+
+.menu-sec-item{
+
 }
