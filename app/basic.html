@@ -11,9 +11,28 @@
         type="text/javascript"></script>
 <script src="/content/jquery-1.8.3.min.js"
         type="text/javascript"></script>
-<script src="/{{file}}/js/{{PAGE_NAME_JS}}.js"
-      type="text/javascript"></script>
+<!--<script src="/{{file}}/js/{{PAGE_NAME_JS}}.js"
+      type="text/javascript"></script>-->
+<script>
+	$(function(){
+		var html;
 
+		var initPage = function() {
+
+			// Load the HTML template
+			$.get("/{{file}}/{{file}}.html", function(d){
+				tmpl = d;
+			});
+
+			// When AJAX calls are complete parse the template
+			// replacing mustache tags with vars
+			$(document).ajaxStop(function () {
+				$("body").html( tmpl );
+			});
+
+		}();
+	})
+</script>
 
 <body>
 	
