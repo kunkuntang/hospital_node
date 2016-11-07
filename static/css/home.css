@@ -97,6 +97,7 @@ a{
 	top: 100%;
 	visibility: hidden;
 	background-color: #4590cd;
+	z-index: 99999;
 }
 
 .menu-sec-item{

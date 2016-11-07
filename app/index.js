@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var handlebars = require('handlebars');
 
 var fs = require('fs'),
 	page_hdlr = require('./handlers/page.js');
@@ -8,11 +9,14 @@ var fs = require('fs'),
 app.use(express.static(__dirname + "/../static"));	  	//设置静态目录，隔离前端代码和服务端代码
 app.use(express.compress());							//设置传输压缩
 
-app.get("/page/:page_name", page_hdlr.generate);
+//资源API
+//app.get("/v1/")
+
+app.get("/page/:page_file/:page_name", page_hdlr.generate);
 app.get("/page/:page_name/:sub_page", page_hdlr.generate);
 
 app.get('/', function(req, res){
-	res.redirect('/page/home');
+	res.redirect('/page/mainIndex/home');
 	res.end();
 });
 
