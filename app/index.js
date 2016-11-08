@@ -11,12 +11,13 @@ app.use(express.compress());							//设置传输压缩
 
 //资源API
 //app.get("/v1/")
+/*app.get("/v1/:resouce", );*/
 
-app.get("/page/:page_name", page_hdlr.generate);
-app.get("/page/:page_name/:sub_page", page_hdlr.generate);
+app.get("/:page_name", page_hdlr.generate);
+app.get("/:page_name/:sub_page", page_hdlr.generate);
 
 app.get('/', function(req, res){
-	res.redirect('/page/hom');
+	res.redirect('/home');
 	res.end();
 });
 

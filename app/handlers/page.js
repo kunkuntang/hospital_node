@@ -6,20 +6,15 @@ exports.version = '0.1.0';
 
 exports.generate = function(req, res){
     
-    var page = req.params.page_name,
-        address = "http://" + config.address.host + ":" + config.address.port;
+    var page = req.params.page_name;
 
-	fs.readFile('basic.html', function(err, contents){
+	fs.readFile('../static/'+ page + '/' + page + '.html', function(err, contents){
 		if(err) {
 			helpers.send_failure(res, helpers.http_code_for_error(err), err);
 			return;
 		}
 
 		contents = contents.toString('utf8');
-		contents = contents.replace(/{{ADDRESS}}/g, address);
-        contents = contents.replace(/{{file}}/g, page);
-		contents = contents.replace('{{PAGE_NAME_JS}}', page);
-		contents = contents.replace('{{PAGE_NAME_CSS}}', page);
 		res.writeHead(200, { "Content-Type" : "text/html" });
 		res.end(contents);
 	})
